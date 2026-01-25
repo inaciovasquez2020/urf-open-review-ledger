@@ -1,0 +1,15 @@
+name: URF-SG Check
+
+on: [push, pull_request]
+
+jobs:
+  urf-sg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - run: pip install numpy
+      - run: python standards/URF-SG/verify.py standards/URF-SG/example.json
+

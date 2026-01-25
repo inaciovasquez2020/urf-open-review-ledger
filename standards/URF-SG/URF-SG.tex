@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\begin{document}
+
+\section*{URF-SG — Spectral Gap Rigidity Standard (v1.0)}
+
+\textbf{Status:} Conditional institutional standard.
+
+\textbf{Invariant.}
+There exists $\alpha>0$ such that for all
+$f\perp\ker(\mathrm{Per})$:
+\[
+\langle f,\mathcal H_\Phi f\rangle \ge \alpha \|f\|^2.
+\]
+
+\textbf{Finite Certificate.}
+Let $\ell_1,\dots,\ell_m$ be linear observables and define:
+\[
+G_{ij}=\langle \nabla \ell_i,\nabla \ell_j\rangle.
+\]
+
+A valid URF-SG certificate satisfies:
+\[
+\lambda_{\min}(G) \ge \alpha > 0.
+\]
+
+\textbf{Verification.}
+Certificates are machine-verifiable using \texttt{verify.py}.
+
+\end{document}
+
