@@ -1,14 +1,17 @@
-import json, numpy as np, sys
+import json, numpy as np, sys, hashlib
 
-with open(sys.argv[1]) as f:
-    cert = json.load(f)
+path = sys.argv[1]
+with open(path, "rb") as f:
+    raw = f.read()
+    cert = json.loads(raw)
 
 G = np.array(cert["gram_matrix"])
 alpha = cert["alpha"]
 
-eig = np.linalg.eigvalsh(G)
-lam = eig[0]
+h = hashlib.sha256(raw).hexdigest()
+lam = np.linalg.eigvalsh(G)[0]
 
+print("sha256 =", h)
 print("lambda_min =", lam)
 print("alpha =", alpha)
 
