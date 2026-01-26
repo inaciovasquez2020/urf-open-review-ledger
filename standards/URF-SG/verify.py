@@ -19,4 +19,6 @@ if lam >= alpha and alpha > 0:
     print("PASS: URF-SG certificate valid")
 else:
     print("FAIL: spectral gap violated")
+if "signature" in cert:
+    print("signature present")
 
