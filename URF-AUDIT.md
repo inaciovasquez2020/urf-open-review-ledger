@@ -1,21 +1,39 @@
-## Claim ID: standards/URF-Block-Exact/README.md
+## Claim ID: URF-SG-BASE-1 (finite truncation)
 
 Text:
-"All statements of stability/robustness under perturbations
-must satisfy the block-exact criterion ΠVΠ = 0."
+Fourier truncation of -d2/dx2 on S1 is rigid under symmetry-preserving V.
 
 Operator A:
-Abstract self-adjoint operator with compact resolvent.
+tools/A_s1_trunc8.json
 
 Perturbation V:
-Abstract symmetric A-bounded operator.
+tools/V_s1_rigid.json
 
 Gap:
-(Ek, Ek+1) arbitrary consecutive isolated eigenvalues.
+(E1, E2)
 
 ΠVΠ:
-Not applicable (this is the governing rule).
+computed = 0
 
 Status:
-VERIFIED (definition, not a claim).
+VERIFIED
+## Claim ID: URF-SG-BASE-1 (generic break)
+
+Text:
+Generic diagonal perturbation breaks rigidity.
+
+Operator A:
+tools/A_s1_trunc8.json
+
+Perturbation V:
+tools/V_s1_break.json
+
+Gap:
+(E1, E2)
+
+ΠVΠ:
+computed ≠ 0
+
+Status:
+VERIFIED (non-rigid)
 
