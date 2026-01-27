@@ -12,6 +12,9 @@ jobs:
 
       - name: Setup Lean
         uses: leanprover/lean-action@v1
+        with:
+          use-mathlib-cache: false
+          use-github-cache: false
 
       - name: Build
         run: lake build
