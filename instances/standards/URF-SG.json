@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/inaciovasquez2020/urf-core/standards/URF-SG.json",
+  "title": "URF Spectral Gap Certification Standard",
+  "type": "object",
+  "required": ["artifact_id", "operator_type", "spectral_gap_value", "period_kernel_certified"],
+  "properties": {
+    "artifact_id": { "type": "string" },
+    "operator_type": { "type": "string" },
+    "spectral_gap_value": { "type": "number" },
+    "period_kernel_certified": { "type": "boolean" }
+  }
+}
