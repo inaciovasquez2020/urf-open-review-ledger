@@ -1,28 +1,13 @@
-# Unified Rigidity Framework (URF Core)
+# urf-core
 
-Foundational invariant-based framework for structural limits in physical
-and computational systems.
+Executable verification artifacts for the Unified Rigidity Framework (URF), including the URF-SG spectral-gap certificate standard.
 
-## Overview
+## Quick start
 
-The Unified Rigidity Framework (URF) provides a general formal structure
-for analyzing constraints arising from locality, information capacity,
-entropy, and dynamical stability.
+```bash
+git clone https://github.com/inaciovasquez2020/urf-core.git
+cd urf-core
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-URF is not a single result, but a unifying invariant layer that supports
-multiple concrete instantiations across mathematics, physics, and
-computer science.
-
-## Core Principles
-
-- Finite capacity implies structural rigidity.
-- Local refinement cannot amplify global information.
-- Invariant collapse replaces algorithmic collapse.
-- Operational constraints replace model-dependent assumptions.
-
-## Concrete Instantiations
-
-URF is instantiated in the following completed works:
-
-- Cycle–Local Rigidity (FO⁴):  
-https://github.com/inaciovasquez2020/cycle-local-rigidity
