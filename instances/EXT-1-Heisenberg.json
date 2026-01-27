@@ -1,0 +1,7 @@
+{
+  "artifact_id": "EXT-1",
+  "operator_type": "sub-Laplacian",
+  "spectral_gap_value": 12.56637,
+  "period_kernel_certified": true,
+  "external_witness_ref": "https://inaciovasquez2020.github.io/vasquez-index/dashboard.html"
+}
