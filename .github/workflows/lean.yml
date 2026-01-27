@@ -11,8 +11,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install elan
-        uses: leanprover/elan-action@v1
-
+      - uses: leanprover-community/setup-lean@v1
       - name: Cache Lake
         uses: actions/cache@v4
         with:
