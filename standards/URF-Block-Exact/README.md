@@ -36,3 +36,10 @@ To validate a certificate against this standard:
 1. Install `jsonschema`:
    ```sh
    pip install jsonschema
+ (Fix URF-Block-Exact README)
+
+To validate a certificate against this standard:
+
+1. Install `jsonschema`:
+   ```sh
+   pip install jsonschema
