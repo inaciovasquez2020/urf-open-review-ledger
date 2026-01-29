@@ -1,7 +1,6 @@
 # Unified Rigidity Framework (URF) — Core
 **Deterministic Verification of Local→Global Structural Stability**
 
-[![Standard: URF-SG v1.0](https://img.shields.io/badge/Standard-URF--SG%20v1.0-accent-green?style=flat-square)](./standards/URF-SG.json)
 [![Status: Core Closed](https://img.shields.io/badge/Status-Core%20Closed-blue?style=flat-square)](#current-status)
 [![ORCID: 0009-0008-8459-3400](https://img.shields.io/badge/ORCID-0009--0008--8459--3400-lightgrey?style=flat-square)](https://orcid.org/0009-0008-8459-3400)
 
