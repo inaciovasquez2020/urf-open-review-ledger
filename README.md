@@ -8,12 +8,12 @@
 
 ## Significance Statement: The URF Closure
 
-The **Unified Rigidity Framework (URF)** resolves a fundamental impasse in Finite Model Theory: the inability of local logic ($FO^k$) to characterize global structural stability in the presence of expander obstructions. 
+The **Unified Rigidity Framework (URF)** addresses a fundamental impasse in Finite Model Theory: the inability of local logic ($FO^k$) to characterize global structural stability in the presence of expander obstructions. 
 
 ### Why This Matters
 * **Computational Determinism:** By establishing the **Logic-Width Dependency** ($k \ge f(tw)$), this work defines the exact threshold where local homogeneity forces global rigidity. This allows for the engineering of systems where structural integrity is a mathematical certainty, not a statistical probability.
 * **From Peer-Review to Machine-Verification:** The URF moves beyond traditional prose-based proofs by introducing the **URF-SG Standard**. Using machine-readable JSON artifacts, the framework enables **Deterministic Auditing** of complex operators—such as the Heisenberg nilmanifold and Ornstein–Uhlenbeck processes—reducing verification time from months to milliseconds.
-* **Universal Applicability:** This research provides the formal bedrock for any information-bearing system requiring absolute stability, from **Distributed Ledger Consensus** to **High-Fidelity Operator Systems**.
+* **Broad Applicability:** This research provides a formal bedrock for information-bearing systems satisfying URF admissibility conditions, including Distributed Ledger Consensus and High-Fidelity Operator Systems.
 
 ---
 
