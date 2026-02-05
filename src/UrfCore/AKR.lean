@@ -1,8 +1,12 @@
-/-
-URF_AKR.lean — Archimedean Kernel Rigidity (compile-stable stub)
--/
+import UrfCore.Prelude
+
 namespace UrfCore
 namespace AKR
+
+structure Kernel (V : Type) where
+  carrier : V → Prop
+
 def dummy : Nat := 0
+
 end AKR
 end UrfCore
