@@ -4,3 +4,4 @@ urc-minimal-blockchain/
 *.log
 *.swp
 .DS_Store
+.lake/
