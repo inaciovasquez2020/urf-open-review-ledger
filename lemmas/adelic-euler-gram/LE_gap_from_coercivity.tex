@@ -1,0 +1,20 @@
+\begin{lemma}[Spectral Leap from coercivity]
+Assume the coercivity inequality
+\[
+\langle v,v\rangle_{\mathrm{NT}} \ge c\,\|v\|^2 \quad \forall v\in V
+\]
+for some $c>0$ on $V:=E(\mathbb{Q})\otimes\mathbb{R}$.
+Then the Euler--Gram operator $\mathcal L_E$ satisfies
+\[
+\lambda_1(E) \ge c,
+\]
+in particular $\mathsf{SpecLeap}(\mathcal L_E)>0$.
+\end{lemma}
+
+\begin{proof}
+On $V$ the operator $\mathcal L_E$ is the Gram operator of the positive definite
+pairing $\langle\cdot,\cdot\rangle_{\mathrm{NT}}$.
+The Rayleigh quotient of $\mathcal L_E$ on $\ker(\mathcal L_E)^\perp=V$ is bounded
+below by the coercivity constant $c$.
+\end{proof}
+
