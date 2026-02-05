@@ -4,4 +4,32 @@
 % - Explicit formula on Paley--Wiener core
 % - Unconditional oscillatory bounds on the core
 % - Diagonal dominance at high frequency
+\section*{Density--Coercivity of the Archimedean Kernel}
+
+\begin{definition}[Paley--Wiener core]
+Let $D$ be the Paley--Wiener subspace of $L^2(\mathbb R)$ consisting of test functions with compactly supported Fourier transform.
+\end{definition}
+
+\begin{lemma}[Diagonal dominance on the core]
+For $f\in D$ with frequency support bounded away from zero, the diagonal term of the explicit formula satisfies
+\[
+\langle \mathcal E_{\mathrm{diag}} f,f\rangle \ge c_0 \|f\|_2^2
+\]
+for some $c_0>0$.
+\end{lemma}
+
+\begin{lemma}[Oscillatory control on the core]
+On $D$, the oscillatory term satisfies
+\[
+|\langle \mathcal E_{\mathrm{osc}} f,f\rangle| \le \varepsilon(R)\|f\|_2^2
+\]
+with $\varepsilon(R)\to 0$ as the frequency cutoff $R\to\infty$.
+\end{lemma}
+
+\begin{theorem}[Density--coercivity]
+For $R$ sufficiently large and $f\in D$ orthogonal to $\ker(\mathcal E)$,
+\[
+\langle \mathcal E f,f\rangle \ge c\|f\|_2^2 .
+\]
+\end{theorem}
 
