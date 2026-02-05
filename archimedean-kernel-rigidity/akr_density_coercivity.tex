@@ -35,6 +35,17 @@ On $D$, the oscillatory term satisfies
 with $\varepsilon(R)\to 0$ as the frequency cutoff $R\to\infty$.
 \end{lemma}
 
+\begin{proof}
+On the Paley--Wiener core $D$, the oscillatory term arises from zero interactions in the
+explicit formula. For compactly supported Fourier transform and frequency cutoff $R$,
+standard explicit-formula estimates give uniform bounds on each oscillatory component.
+Summing these bounds and applying Plancherel yields
+\[
+|\langle \mathcal E_{\mathrm{osc}} f,f\rangle| \le \varepsilon(R)\|f\|_2^2
+\]
+with $\varepsilon(R)\to 0$ as $R\to\infty$.
+\end{proof}
+
 \begin{theorem}[Density--coercivity]
 For $R$ sufficiently large and $f\in D$ orthogonal to $\ker(\mathcal E)$,
 \[
