@@ -29,7 +29,7 @@ References:
 * **Reproducibility:** For stable research results, ensure you are utilizing the specific version referenced in the Vasquez Index dashboard.
 * **Dependencies:** Refer to `scientific-infrastructure` for the standard execution environment.
 
-Scientific Infrastructure (GitHub Pages)
+Scientific Infrastructure (Environment & Reproducibility)
 https://inaciovasquez2020.github.io/scientific-infrastructure/
 
 ## Citation
