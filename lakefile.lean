@@ -6,3 +6,11 @@ package urf_core
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4"
 
+lean_lib UrfCore {
+  srcDir := "src"
+}
+
+lean_exe urf_tests {
+  root := `src.Main
+}
+
