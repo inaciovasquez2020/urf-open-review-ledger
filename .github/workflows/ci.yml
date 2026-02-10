@@ -17,5 +17,8 @@ jobs:
         with:
           cache: true
 
+      - name: Lake update
+        run: lake update
+
       - name: Build
         run: lake build
