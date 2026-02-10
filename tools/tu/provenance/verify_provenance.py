@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
-import json, subprocess, sys, pathlib
-
+import json, subprocess, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 P = ROOT / "PROVENANCE.json"
 
-def sh(cmd):
-    return subprocess.check_output(cmd, cwd=ROOT).decode().strip()
+def sh(c): return subprocess.check_output(c, cwd=ROOT).decode().strip()
 
-def fail(msg):
-    print(f"ERROR: {msg}", file=sys.stderr)
+data = json.loads(P.read_text())
+parent = sh(["git","rev-parse","HEAD^"])
+
+if data["commit"] != parent:
+    print("ERROR provenance mismatch", file=sys.stderr)
     sys.exit(1)
 
-data = json.loads(P.read_text(encoding="utf-8"))
-head = sh(["git","rev-parse","HEAD"])
-
-if data.get("commit","") != head:
-    fail(f"provenance mismatch: PROVENANCE={data.get('commit')} HEAD={head}")
-
-print("OK: PROVENANCE.json = HEAD")
+print("OK provenance stable")
