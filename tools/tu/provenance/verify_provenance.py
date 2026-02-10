@@ -12,9 +12,9 @@ def fail(msg):
     sys.exit(1)
 
 data = json.loads(P.read_text(encoding="utf-8"))
+head = sh(["git","rev-parse","HEAD"])
 
-parent = sh(["git","rev-parse","HEAD^"])
-if data.get("commit","") != parent:
-    fail(f"provenance mismatch: PROVENANCE={data.get('commit')} parent(HEAD)={parent}")
+if data.get("commit","") != head:
+    fail(f"provenance mismatch: PROVENANCE={data.get('commit')} HEAD={head}")
 
-print("OK: PROVENANCE.json = parent(HEAD)")
+print("OK: PROVENANCE.json = HEAD")
