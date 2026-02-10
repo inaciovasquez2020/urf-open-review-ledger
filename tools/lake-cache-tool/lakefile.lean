@@ -1,7 +1,6 @@
 import Lake
 open Lake DSL
 
-package LakeCacheTool where
-  moreLeanArgs := #[]
+package lake_cache_tool where
 
 lean_lib LakeCacheTool
