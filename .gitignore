@@ -18,4 +18,3 @@ tools/rolecheck/git_tracked.py
 build/
 .lake/
 .lake
-tools/lake-cache-tool/
