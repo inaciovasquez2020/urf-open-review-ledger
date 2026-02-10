@@ -22,11 +22,20 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Lean build
-        uses: leanprover/lean-action@v1
-        with:
-          use-mathlib-cache: false
-          test: false
+      - name: Install elan + Lean + lake (single source of truth)
+        run: |
+          set -euo pipefail
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          source "$HOME/.elan/env"
+          lean --version
+          lake --version
+
+      - name: Lake update
+        run: |
+          set -euo pipefail
+          source "$HOME/.elan/env"
+          lake update
 
       - name: TV finite certificate test
         run: |
@@ -55,35 +64,33 @@ jobs:
       - name: Build Lean (URFCore)
         run: |
           set -euo pipefail
+          source "$HOME/.elan/env"
           lake build
 
       - name: Assert theorem stub present
         run: |
-          set -euo pipefail
           grep -q "projDigestEquiv" URFCore/Provenance.lean
 
       - name: Probe CI capabilities
         run: |
-          set -euo pipefail
           bash tools/ci/probe_ci_capabilities.sh
 
       - name: Optional cache get (capability-gated)
         run: |
           set -euo pipefail
+          source "$HOME/.elan/env"
           if jq -e '.has_cache_exec == true' ci-capabilities.json >/dev/null; then
-            lake exe cache get
+            lake exe cache get || true
           else
             echo "SKIP: no cache executable"
           fi
 
       - name: Assert lake-cache-tool directory exists
         run: |
-          set -euo pipefail
           test -d tools/lake-cache-tool
           test -f tools/lake-cache-tool/lakefile.lean
 
       - name: Generate Lean capabilities module
         run: |
-          set -euo pipefail
           bash tools/ci/probe_ci_capabilities.sh
           bash tools/ci/write_capabilities_lean.sh
