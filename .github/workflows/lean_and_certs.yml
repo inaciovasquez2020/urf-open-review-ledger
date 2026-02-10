@@ -1,0 +1,31 @@
+name: lean_and_certs
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan + Lean + lake (manual, no lean-action)
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          source $HOME/.elan/env
+          lean --version
+          lake --version
+
+      - name: Lake update
+        run: |
+          source $HOME/.elan/env
+          lake update
+
+      - name: Build
+        run: |
+          source $HOME/.elan/env
+          lake build
