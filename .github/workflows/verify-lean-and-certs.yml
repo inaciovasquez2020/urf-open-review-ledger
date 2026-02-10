@@ -61,3 +61,17 @@ jobs:
         run: |
           set -euo pipefail
           grep -q "projDigestEquiv" URFCore/Provenance.lean
+
+      - name: Probe CI capabilities
+        run: |
+          set -euo pipefail
+          bash tools/ci/probe_ci_capabilities.sh
+
+      - name: Optional cache get (capability-gated)
+        run: |
+          set -euo pipefail
+          if jq -e '.has_cache_exec == true' ci-capabilities.json >/dev/null; then
+            lake exe cache get
+          else
+            echo "SKIP: no cache executable"
+          fi
