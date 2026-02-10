@@ -51,3 +51,13 @@ jobs:
           URF_REFEREE_RUN_LEAN: "0"
         run: |
           python3 tools/referee_bundle/verify_referee_bundle.py
+
+      - name: Build Lean (URFCore)
+        run: |
+          set -euo pipefail
+          lake build
+
+      - name: Assert theorem stub present
+        run: |
+          set -euo pipefail
+          grep -q "projDigestEquiv" URFCore/Provenance.lean
