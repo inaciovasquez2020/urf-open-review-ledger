@@ -148,3 +148,9 @@ If you use URF foundational logic or reductions, cite:
   year   = {2026},
   url    = {https://github.com/inaciovasquez2020/urf-core}
 }
+
+## Quickstart (60 seconds)
+
+```bash
+./scripts/urf verify demo
+```
