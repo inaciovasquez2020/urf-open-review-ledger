@@ -1,0 +1,20 @@
+{
+  "title": "URF Open Review Ledger",
+  "description": "Public registry and open review ledger for URF manuscripts. Stores manuscript identifiers, immutable version pointers, review records, and governance.",
+  "creators": [
+    {
+      "name": "Vasquez, Inacio F.",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "open peer review",
+    "formal verification",
+    "foundations",
+    "locality",
+    "information theory",
+    "negative results"
+  ],
+  "upload_type": "software"
+}
