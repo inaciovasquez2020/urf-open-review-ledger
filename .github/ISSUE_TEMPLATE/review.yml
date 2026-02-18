@@ -1,0 +1,54 @@
+name: Manuscript Review
+description: Structured technical review of a frozen manuscript version
+title: "Review: URF-P-XXXX@vX.Y.Z"
+labels: ["review"]
+body:
+  - type: input
+    id: manuscript_id
+    attributes:
+      label: Manuscript ID
+      description: Example URF-P-0001@v1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: artifact_pointer
+    attributes:
+      label: Artifact pointer
+      description: repo, tag, commit, sha256(pdf)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope checked
+      options:
+        - Read only
+        - Definitions and statements
+        - Proof sketch
+        - Full proof
+        - Code or verifier reproduced
+    validations:
+      required: true
+
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Verdict
+      options:
+        - Sound
+        - Sound with clarification
+        - Conditional
+        - Disputed
+        - Refuted
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Technical details
+      description: Precise objections, missing lemmas, or counterexamples
+    validations:
+      required: false
