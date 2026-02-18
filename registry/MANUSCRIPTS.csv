@@ -1,2 +1,6 @@
 id,title,repository,tag,commit,sha256,state,notes
-URF-P-0001,Boundary-Decoupled Relational Observables and Sharp BMS Decoupling,REPO_URL_HERE,TAG_HERE,COMMIT_HERE,SHA256_HERE,FROZEN,first physics manuscript
+URF-P-0001,Capacity Obstructions to Mathematical Reasoning Systems,local,local,,748dc7d194909eddcf7db835e368f1771f6b99a51234f7cb808d4dbf3dc9a43e,FROZEN,first reasoning-capacity manuscript
+
+
+
+
