@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "URF Open Review Ledger"
+message: "If you use this ledger or reference review records, please cite it."
+type: software
+authors:
+  - family-names: Vasquez
+    given-names: Inacio F.
+repository-code: https://github.com/inaciovasquez2020/urf-open-review-ledger
+license: MIT
+version: 0.1.0
+date-released: 2026-02-18
