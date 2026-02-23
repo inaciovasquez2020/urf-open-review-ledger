@@ -2,6 +2,9 @@ name: SLSA Verify Gate (GitHub attestations)
 
 on:
   push:
+    tags:
+      - 'v*'
+  push:
     tags: ["v*"]
   workflow_dispatch:
 
@@ -11,7 +14,10 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on:
+  push:
+    tags:
+      - 'v*'
     steps:
       - uses: actions/checkout@v4
 
