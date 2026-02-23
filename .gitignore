@@ -15,3 +15,8 @@ __pycache__/
 tools/rolecheck/__pycache__/
 
 certs/urfvis/*.key
+*.aux
+*.log
+*.pdf
+*.fls
+*.fdb_latexmk
