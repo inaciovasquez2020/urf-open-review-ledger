@@ -3,6 +3,9 @@ name: Tuple (CI binding)
 on:
   push:
     tags:
+      - 'v*'
+  push:
+    tags:
       - "v*"
       - "core-green-*"
       - "repo-hygiene-*"
@@ -12,9 +15,13 @@ permissions:
 
 jobs:
   tuple:
-    runs-on: ubuntu-latest
+    runs-on:
+  push:
+    tags:
+      - 'v*'
     steps:
       - uses: actions/checkout@v4
+      with:n        fetch-depth: 0
         with:
           fetch-depth: 0
 

@@ -2,6 +2,9 @@ name: Tag Signature Check (GPG)
 
 on:
   push:
+    tags:
+      - 'v*'
+  push:
     tags: ["v*"]
   workflow_dispatch:
 
@@ -10,7 +13,10 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on:
+  push:
+    tags:
+      - 'v*'
     steps:
       - uses: actions/checkout@v4
         with:

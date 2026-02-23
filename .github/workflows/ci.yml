@@ -18,3 +18,9 @@ jobs:
 
       - run: lake update
       - run: lake build
+     
+ - name: Invariant file binding
+        run: |
+          while read -r file; do
+            test -f "$file"
+          done < .ci/required_files.txt
