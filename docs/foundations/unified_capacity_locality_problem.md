@@ -73,3 +73,8 @@ Supporting artifacts live in dedicated evidence repositories; this page
 serves as the canonical semantic reference.
 
 **Status:** **CLOSED**
+
+## Counterexamples and Boundary Analysis (OWC)
+For canonical counterexamples and boundary constructions related to OWC-style
+claims, see:
+https://github.com/inaciovasquez2020/owc-counterexamples
