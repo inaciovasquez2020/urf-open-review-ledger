@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18790284.svg)](https://doi.org/10.5281/zenodo.18790284)
+
 URF Open Review Ledger
 
 This repository is the public registry and review ledger for URF manuscripts.
