@@ -1,10 +1,7 @@
 import Lake
 open Lake DSL
 
-package urf_core where
-  leanOptions := #[⟨`pp.unicode.fun, true⟩]
+package urf_core
 
-lean_lib URFCore where
-  -- add src dirs later if needed
-
-
+@[default_target]
+lean_lib URFCore
