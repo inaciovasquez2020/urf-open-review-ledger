@@ -22,11 +22,6 @@ def projDigestEquiv : ProvenanceProj ≃ SLSADigest where
  invFun := digestToProj
  left_inv := proj_digest_left_inv
  right_inv := proj_digest_right_inv
-{ toFun := projToDigest
-, invFun := digestToProj
-, left_inv := proj_digest_left_inv
-, right_inv := proj_digest_right_inv
-}
 
 namespace URFCore
 
