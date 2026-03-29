@@ -126,3 +126,18 @@ axiom poincare_end_to_end_descent :
   ∀ x : Poincare.State, ∃ D : DescentSystem Poincare.State, D.nstep x.rank x = x
 
 end URF
+
+axiom explicit_F2_realization_and_step_compatibility :
+  ∃ (E : Type u) (_ : Fintype E) (_ : DecidableEq E)
+    (encode : ∀ {α : Type u}, Witness α → Fin E → ZMod 2)
+    (extractRMatrix :
+      ∀ {α : Type u}, DescentSystem α → Nat → Configuration α →
+        Matrix ({w // w ∈ DescentSystem.extractR · · ·} ) (Fin (Fintype.card E)) (ZMod 2)),
+    (∀ {α : Type u} (w : Witness α),
+      cycleRankF2 w = Module.finrank (ZMod 2) (Submodule.span (ZMod 2) (Set.range (encode w)))) ∧
+    (∀ {α : Type u} (D : DescentSystem α) (R : Nat) (C : Configuration α),
+      Matrix.rank (extractRMatrix D R C) = Finset.card (D.extractR R C)) ∧
+    (∀ x : Poincare.State,
+      Poincare.step x = x ∨ Poincare.rank (Poincare.step x) < Poincare.rank x)
+
+end URF
