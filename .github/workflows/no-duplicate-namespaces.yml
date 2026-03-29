@@ -15,6 +15,14 @@ jobs:
           lean --version
           lake --version
 
+      - name: Cache elan + lake
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/lean
+          key: ${{ runner.os }}-lean-${{ hashFiles('lean-toolchain') }}
+
       - name: Detect duplicate namespaces (same file only)
         run: |
           dup=$(grep -R '^[[:space:]]*namespace[[:space:]]\+' -n lean 2>/dev/null \
