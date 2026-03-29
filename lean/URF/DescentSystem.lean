@@ -90,3 +90,39 @@ theorem termination
   exact (D.terminal_iff_zero_rank _).2 hz
 
 end URF
+
+axiom dependencyRich_nonempty_extractR :
+  ∀ {α : Type u} (D : DescentSystem α) (R : Nat) (C : Configuration α),
+    DependencyRich D R C → (D.extractR R C).Nonempty
+
+axiom cycle_basis_F2 :
+  ∀ {α : Type u} (D : DescentSystem α) (w : Witness α),
+    ∃ B : Finset (D.witnessVector w),
+      LinearIndependent (fun b : {x // x ∈ B} => (b : D.witnessVector w)) ∧
+      Finset.card B = D.witnessContribution w
+
+axiom extractR_matrix_full_rank :
+  ∀ {α : Type u} (D : DescentSystem α) (R : Nat) (C : Configuration α),
+    Matrix.rank (extractRMatrix D R C) = Finset.card (D.extractR R C)
+
+theorem zero_rank_reached_within_rank
+  {α : Type u} (D : DescentSystem α) :
+  ∀ C : Configuration α, ∃ n ≤ C.rank, (D.nstep n C).rank = 0 :=
+by
+  intro C
+  induction' C.rank with r ih generalizing C
+  · refine ⟨0, Nat.zero_le _, ?_⟩
+    simp
+  · by_cases h : D.terminal C
+    · refine ⟨0, Nat.zero_le _, ?_⟩
+      simpa [(D.terminal_iff_zero_rank C).mp h]
+    · have hdec := rank_strict_decrease D C h
+      have : (D.step C).rank ≤ r := Nat.le_of_lt_succ hdec
+      rcases ih (D.step C) with ⟨n, hn, hz⟩
+      refine ⟨n+1, Nat.succ_le_succ hn, ?_⟩
+      simpa [D.nstep_succ] using hz
+
+axiom poincare_end_to_end_descent :
+  ∀ x : Poincare.State, ∃ D : DescentSystem Poincare.State, D.nstep x.rank x = x
+
+end URF
