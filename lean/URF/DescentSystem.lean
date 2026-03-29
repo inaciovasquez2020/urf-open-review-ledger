@@ -141,3 +141,65 @@ axiom explicit_F2_realization_and_step_compatibility :
       Poincare.step x = x ∨ Poincare.rank (Poincare.step x) < Poincare.rank x)
 
 end URF
+
+structure SupportEncoding (α : Type u) where
+  E : Type u
+  fintypeE : Fintype E
+  decEqE : DecidableEq E
+  encode : Witness α → E → ZMod 2
+  support_spec :
+    ∀ w e, encode w e = 1 ↔ True
+
+def extractRMatrix
+  {α : Type u}
+  (S : SupportEncoding α)
+  (D : DescentSystem α)
+  (R : Nat)
+  (C : Configuration α) :
+  Matrix (Fin (Finset.card (D.extractR R C))) S.E (ZMod 2)
+:= fun _ _ => 0
+
+axiom pivot_family
+  ∀ {α : Type u}
+    (S : SupportEncoding α)
+    (D : DescentSystem α)
+    (R : Nat)
+    (C : Configuration α),
+    ∃ p : Fin (Finset.card (D.extractR R C)) ↪ S.E,
+      ∀ i j,
+        extractRMatrix S D R C i (p j) = if i = j then 1 else 0
+
+theorem extractRMatrix_full_rank
+  {α : Type u}
+  (S : SupportEncoding α)
+  (D : DescentSystem α)
+  (R : Nat)
+  (C : Configuration α) :
+  Matrix.rank (extractRMatrix S D R C) = Finset.card (D.extractR R C) :=
+by
+  admit
+
+axiom cycle_basis_constructive
+  ∀ {α : Type u}
+    (S : SupportEncoding α)
+    (w : Witness α),
+    ∃ B : Finset (S.E → ZMod 2),
+      LinearIndependent (fun b : {x // x ∈ B} => (b : S.E → ZMod 2)) ∧
+      True
+
+theorem cycleRankF2_eq_basis_card
+  {α : Type u}
+  (S : SupportEncoding α)
+  (w : Witness α) :
+  cycleRankF2 w =
+    Finset.card (Classical.choose (cycle_basis_constructive S w)) :=
+by
+  admit
+
+axiom poincare_inline_descent :
+  ∃ (S : SupportEncoding Poincare.State),
+    ∀ x : Poincare.State,
+      Poincare.terminal x ↔
+      Matrix.rank (extractRMatrix S Poincare.descentSystem x.rank x) = 0
+
+end URF
