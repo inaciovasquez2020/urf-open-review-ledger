@@ -1,6 +1,6 @@
 ---
 name: Additive extension
-about: Submit an admissible additive contribution
+about: Submit an additive contribution to the public interface layer
 title: "[additive] "
 labels: additive
 assignees: ""
@@ -8,20 +8,20 @@ assignees: ""
 
 ## Class
 - [ ] example
-- [ ] expository map
-- [ ] formalization extension
+- [ ] exposition
 - [ ] test
 - [ ] implementation
-- [ ] visualization/tooling
+- [ ] visualization
+- [ ] non-canonical extension
 
 ## Scope
-Describe the narrow additive scope.
+State the smallest additive scope.
 
-## Canonical boundary check
-- [ ] does not modify theorem statements
-- [ ] does not modify dependency ledger
-- [ ] does not modify closure claims
-- [ ] does not modify canonical axioms
+## Boundary certification
+- [ ] no theorem-statement edits
+- [ ] no axiom edits
+- [ ] no dependency-ledger edits
+- [ ] no closure-claim edits
 
-## Proposed artifact
-Describe files, outputs, and verification surface.
+## Verification surface
+List files, commands, and expected outputs.

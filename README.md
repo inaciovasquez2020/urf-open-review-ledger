@@ -1,45 +1,28 @@
-# URF Prefab System
+# urf-core-community
 
-Canonical prefab layer for the Unified Rigidity Framework (URF).
+## Status
+Public additive interface layer for URF.
 
-This repository provides:
-- Frozen axiom prefab (URF Core Axioms 0.0–0.4)
-- Executable JSON schemas
-- Deterministic verifier
-- Reproducible CI-ready structure
+## Canonical source
+The authoritative source remains `inaciovasquez2020/urf-core`.
 
-Status:
-- Canonical
-- Frozen v1.0.0
-- Dependency-locked to URF Core
+## Repository function
+This repository exists to make the canonical system usable without modifying canonical authority.
 
-Scope:
-- Structural admissibility
-- Capacity–locality certification
-- No experimental or draft material
+## Admissible contribution classes
+1. examples
+2. exposition
+3. tests
+4. implementations
+5. visualizations
+6. non-canonical extensions explicitly labeled as such
 
-References:
-- URF Core: https://github.com/inaciovasquez2020/urf-core
-- Scientific Infrastructure: https://github.com/inaciovasquez2020/scientific-infrastructure
-- Website: https://www.vasquezresearch.com
----
+## Inadmissible contribution classes
+1. edits to canonical theorem statements
+2. edits to canonical axioms
+3. edits to dependency ledgers
+4. edits to closure claims
+5. parallel authority claims
 
-## Technical Notes
-* **Integration:** This library is designed to be imported by other repositories within the inaciovasquez2020 organization.
-* **Reproducibility:** For stable research results, ensure you are utilizing the specific version referenced in the Vasquez Index dashboard.
-* **Dependencies:** Refer to `scientific-infrastructure` for the standard execution environment.
-
-Scientific Infrastructure (Environment & Reproducibility)
-https://inaciovasquez2020.github.io/scientific-infrastructure/
-
-## Citation
-If you utilize this core logic in your research, please cite it using the following entry:
-
-```bibtex
-@manual{Vasquez_URF_Core_2026,
-  author = {Vasquez, Inacio F.},
-  title  = {urf-core: Foundational Logic for the Universal Reference Frame},
-  year   = {2026},
-  url    = {[https://github.com/inaciovasquez2020/urf-core](https://github.com/inaciovasquez2020/urf-core)}
-}
- (Cross-link scientific-infrastructure as canonical environment layer)
+## Promotion rule
+No artifact here changes canonical status unless explicitly promoted by maintainer review into `urf-core`.
