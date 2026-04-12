@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Canonical upstream
+    url: https://github.com/inaciovasquez2020/urf-core
+    about: Canonical authority remains upstream; this repository accepts additive community contributions only.
