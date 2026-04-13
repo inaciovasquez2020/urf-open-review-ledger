@@ -46,3 +46,6 @@ Any future strengthening should be labeled as one of:
 - registry/status consistency
 - review-governance clarification
 and must not relabel the repository as theorem-complete without a new proof layer.
+
+## Remaining Live Frontier
+- none
