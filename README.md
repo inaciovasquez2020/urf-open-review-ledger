@@ -26,3 +26,20 @@ This repository exists to make the canonical system usable without modifying can
 
 ## Promotion rule
 No artifact here changes canonical status unless explicitly promoted by maintainer review into `urf-core`.
+
+## Verification Path
+
+Minimal local verification:
+- `python3 -m pytest -q`
+- `./scripts/test_repo.zsh`
+
+Minimal reading order:
+1. `docs/examples/QUICKSTART.md`
+2. `docs/examples/MINIMAL_PUBLIC_WORKFLOW.md`
+3. `docs/status/CORE_INTERFACE_HARDENING_2026_04_17.md`
+4. `docs/status/PYTEST_NORMALIZATION_2026_04_17.md`
+5. `docs/status/INTERFACE_HARDENING_FREEZE_2026_04_17.md`
+
+Authority rule:
+- Canonical authority remains in `urf-core`.
+- This repository is a public additive interface layer.
