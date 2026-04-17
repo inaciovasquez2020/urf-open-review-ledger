@@ -5,3 +5,5 @@ urc-minimal-blockchain/
 *.swp
 .DS_Store
 .lake/
+__pycache__/
+*.py[cod]
