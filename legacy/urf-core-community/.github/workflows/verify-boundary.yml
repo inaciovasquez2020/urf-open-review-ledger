@@ -1,0 +1,17 @@
+name: verify-boundary
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify forbidden canonical files absent
+        run: |
+          test ! -e canonical
+          test ! -e axioms
+          test ! -e dependency-ledger
+          echo "BOUNDARY: PASS"

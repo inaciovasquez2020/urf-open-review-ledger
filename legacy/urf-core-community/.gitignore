@@ -1,0 +1,9 @@
+papers/
+urc-minimal-blockchain/
+*.aux
+*.log
+*.swp
+.DS_Store
+.lake/
+__pycache__/
+*.py[cod]

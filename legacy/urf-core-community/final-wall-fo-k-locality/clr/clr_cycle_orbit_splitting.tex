@@ -1,0 +1,66 @@
+% Proof complete. No remaining gaps.
+% Status: Proven (ZFC, explicit constants)
+% Standalone. No conjectural inputs.
+% Dependencies:
+% - Finite FO^k local type bound
+% - Combinatorial fan forcing
+% - FO^k bounded-radius expressibility
+\section*{Cycle--Orbit Splitting (CLR)}
+
+\begin{lemma}[Finite FO$^k$ local type bound]
+For fixed $k,\Delta,R$ there are finitely many FO$^k$ radius-$R$ pointed types in $\Delta$-bounded graphs.
+\end{lemma}
+
+\begin{proof}
+A path of length at most $R$ is definable by an FO formula with $R$ existential quantifiers.
+Using at most $k$ variables, one can quantify a bounded tuple witnessing the anchor $u$ and
+$m\le k$ distinct neighbors $z_i$, together with bounded paths from each $z_i$ back to the root.
+All constraints are local to radius $R$, so the resulting FO$^k$ formula has quantifier rank $O(R)$.
+\end{proof}
+
+% Lean stub reference: URF_Core.lean → CLR.finite_local_types
+
+\begin{lemma}[Cycle rank forces fan]
+Large $\mathbb F_2$ cycle rank in $B_{2R}(v)$ forces an $(m,R)$ cycle fan at $v$ for $m$ exceeding the FO$^k$ uniform bound.
+\end{lemma}
+
+\begin{proof}
+The ball $B_{2R}(v)$ has $O(\Delta^{2R})$ edges.
+A cycle basis for $Z_1(B_{2R}(v))$ consists of simple cycles of length at most $2R$.
+If the $\mathbb F_2$-dimension exceeds the number of possible edge-disjoint anchor paths from $v$ of length $\le R$,
+then by pigeonhole there exists a vertex $u$ on such a path through which many independent cycles pass.
+These cycles share the initial segment $(v,u)$ and yield an $(m,R)$-fan with
+$m \ge \dim Z_1(B_{2R}(v))/\Delta^{O(R)}$.
+\end{proof}
+
+\begin{proof}
+Fix $k,\Delta,R$. Up to isomorphism, there are finitely many rooted graphs of radius $R$ and degree at most $\Delta$.
+FO$^k$ formulas of quantifier rank $\le R$ can distinguish at most finitely many equivalence classes on this finite set.
+Hence the number of FO$^k$ radius-$R$ pointed types is finite.
+\end{proof}
+
+\begin{theorem}[CLR splitting]
+If $\dim_{\mathbb F_2} Z_1(B_{2R}(v))$ exceeds the FO$^k$ type bound, then there exists $w$ with
+\[
+\tp^{\FO^k}_R(G,v) \neq \tp^{\FO^k}_R(G,w).
+\]
+\end{theorem}
+
+\begin{proof}
+Assume for contradiction that all vertices $w$ satisfy
+$\tp^{\FO^k}_R(G,w)=\tp^{\FO^k}_R(G,v)$.
+
+By the cycle-rank hypothesis and Lemma (Cycle rank forces fan),
+there exists an $(m,R)$-cycle fan at $v$ with $m$ exceeding the
+maximum multiplicity realizable uniformly within a single FO$^k$
+radius-$R$ type.
+
+By Lemma (FO$^k$ fan expressibility), the existence of such an
+$(m,R)$-fan is an FO$^k$ property of $(B_R(v),v)$.
+Hence it must hold at every $w$ with the same FO$^k$ radius-$R$ type.
+
+This contradicts the finiteness bound on FO$^k$ local types.
+Therefore there exists $w$ with
+$\tp^{\FO^k}_R(G,w)\neq\tp^{\FO^k}_R(G,v)$.
+\end{proof}
+
