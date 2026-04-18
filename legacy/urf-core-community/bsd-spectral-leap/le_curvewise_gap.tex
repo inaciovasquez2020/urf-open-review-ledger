@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\title{\textbf{BSD Curve-wise Spectral Leap}}
+\author{Inacio F.\ Vasquez \\ Independent Researcher}
+\date{}
+
+% --- Theorem Environments ---
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- Notation ---
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\hath}{\hat h}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\textbf{Status summary.}
+\begin{itemize}
+\item Curve-wise spectral leap: \textbf{Proven for each curve}, uniformity not assumed.
+\item Dependencies: Mordell--Weil theorem, positive definiteness of Néron--Tate height, lattice minimum.
+\item Lean references: \texttt{URF\_Core.lean → BSD.*}
+\end{itemize}
+\end{center}
+
+\tableofcontents
+
+\section{Néron--Tate Form and Positive Definiteness}
+
+\begin{definition}[Néron--Tate height quadratic form]
+Let $E/\Q$ be an elliptic curve. The Néron--Tate quadratic form is
+\[
+\hath(P) : E(\Q) \to \R.
+\]
+\end{definition}
+
+\begin{lemma}[Positive definiteness]\label{lem:bsd-positive}
+The quadratic form $\hath$ is positive definite on $E(\Q)/E(\Q)_{\mathrm{tors}}$.
+\end{lemma}
+
+\begin{proof}
+$\hath$ is quadratic on $E(\Q)\otimes_\Z \R$.  
+Kernel is torsion points.  
+Hence it descends to a positive definite form on the non-torsion lattice.  
+\textbf{Lean stub reference:} \texttt{URF\_Core.lean → BSD.positive\_definite}
+\end{proof}
+
+\section{Lattice Minimum}
+
+\begin{lemma}[Lattice minimum]\label{lem:bsd-lattice}
+For a positive definite form on the lattice $E(\Q)/E(\Q)_{\mathrm{tors}}$, the minimum over nonzero points is strictly positive.
+\end{lemma}
+
+\begin{proof}
+Any positive definite quadratic form on a lattice $\Z^r$ attains a strictly positive minimum on nonzero lattice points.  
+\textbf{Lean stub reference:} \texttt{URF\_Core.lean → BSD.lattice\_minimum}
+\end{proof}
+
+\section{Curve-wise Spectral Gap}
+
+\begin{theorem}[Curve-wise spectral gap]\label{thm:bsd-curvewise}
+For each fixed $E/\Q$, there exists $\lambda(E)>0$ such that
+\[
+\hath(P) \ge \lambda(E) \quad \forall P \in E(\Q)\setminus E(\Q)_{\mathrm{tors}}.
+\]
+\end{theorem}
+
+\begin{proof}
+Apply Lemmas \ref{lem:bsd-positive} and \ref{lem:bsd-lattice}.  
+This gives a strictly positive minimum for non-torsion points, yielding a spectral gap.  
+\textbf{Lean stub reference:} \texttt{URF\_Core.lean → BSD.curvewise\_gap}
+\end{proof}
+
+\begin{remark}[Scope]
+The result is curve-wise; no uniform lower bound across all curves is assumed.  
+\textbf{Frozen module:} Yes.
+\end{remark}
+
+\end{document}
+
