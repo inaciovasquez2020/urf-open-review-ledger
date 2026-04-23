@@ -32,3 +32,8 @@ Goal
 - Clarify what is true
 - Identify exact boundaries
 - Preserve a public technical record
+
+
+## Artifact Review Contract
+
+- `templates/ARTIFACT_REVIEW_CONTRACT_v1.md`

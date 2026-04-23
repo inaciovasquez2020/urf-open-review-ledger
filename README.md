@@ -11,3 +11,8 @@ This repository records:
 - public review records
 - review state transitions
 - governance and acceptability rules
+
+
+## Artifact Review Contract
+
+- `templates/ARTIFACT_REVIEW_CONTRACT_v1.md`
